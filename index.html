@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="relative overflow-hidden bg-zinc-950 text-white">
+
+  <img class="absolute w-full h-screen inset-0 object-cover object-center opacity-95 pointer-events-none  z-0"
+    src="./images/urban-vintage-78A265wPiO4-unsplash.jpg" alt="">
+  <!-- Form section -->
+  <div class="relative flex items-center justify-center min-h-screen z-10 pt-20">
+    <form
+      class="border shadow-3xl transition-transform duration-300 hover:scale-105 rounded-2xl px-16 py-8  backdrop-blur-5xl w-[400px]"
+      id="loginForm" style="border: rgba(255, 255, 255, 0.4); background-color: rgba(255, 255, 255, 0.2);">
+
+      <h2 class="text-center text-3xl font-semibold mb-6 text-white">Login</h2>
+
+      <div class="mb-4">
+        <label class="form-label text-white text-sm">Email Address</label>
+        <div class="flex items-center border border-zinc-500 rounded-lg overflow-hidden">
+          <span class="px-3 bg-zinc-800"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" required id="email" class="w-full bg-transparent p-2 outline-none text-white"
+            placeholder="example@gmail.com" />
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label text-white  text-sm">Password</label>
+        <div class="flex items-center border border-zinc-500 rounded-lg overflow-hidden">
+          <span class="px-3 bg-zinc-800"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" required id="password" class="w-full bg-transparent p-2 outline-none text-white"
+            placeholder="********" />
+        </div>
+      </div>
+
+      <p id="message" class="text-red-500 text-sm text-center mb-3"></p>
+
+      <div class="mb-4 flex items-center gap-2">
+        <label for="terms" class="text-gray-400 text-sm">
+          <a href="./pages/resetpass.html" class="text-red-600 hover:underline">Forgot Your Password?</a>
+        </label>
+      </div>
+
+      <button type="submit"
+        class=" hover:bg-blue-700 transition-colors duration-200 text-white font-medium py-2 px-6 rounded-lg w-full"
+        style="background-color: rgba(255, 255, 255, 0.2);">
+        Login
+      </button>
+
+      <a href="./pages/signup.html"
+        class="block text-center  mt-3 text-white font-medium py-2 px-6 rounded-lg w-full hover:bg-red-600 transition"
+        style="background-color: rgba(255, 255, 255, 0.2);">
+        Sign Up
+      </a>
+
+    </form>
+  </div>
+
+  <!-- js -->
+  <script>
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      loginFunction();
+    });
+
+    async function loginFunction() {
+      const data = {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+      };
+
+      try {
+        const res = await fetch('http://localhost:3000/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+        console.log("Response:", result);
+
+        if (res.ok && result.token) {
+          message.textContent = 'Successful login';
+          message.style.color = 'green';
+
+          localStorage.setItem('token', result.token);
+
+          setTimeout(() => {
+            window.location.href = './pages/home.html';
+          }, 800);
+        } else {
+          message.textContent = result.message || 'Incorrect email or password';
+          message.style.color = 'red';
+        }
+
+      } catch (error) {
+        console.log(error);
+        message.textContent = 'Server error';
+        message.style.color = 'red';
+      }
+    }
+  </script>
+  </script>
+
+</body>
+
+</html>

@@ -87,6 +87,10 @@
         const result = await res.json();
         console.log("Response:", result);
 
+        console.log("Status:", res.status);
+        console.log("Result:", result);
+
+
         if (res.ok && result.token) {
           message.textContent = 'Successful login';
           message.style.color = 'green';

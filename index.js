@@ -21,8 +21,14 @@ app.use(express.json());
 //CORS ==> cross origin resorce share
 app.use(
   cors({
-    origin: "http://127.0.0.1:5500",
+    origin: [
+      "http://127.0.0.1:5500",
+      "http://localhost:5500",
+      "https://dashboard-tomas.netlify.app"
+    ],
     methods: "POST",
+    allowedHeaders: "Content-Type,Authorization"
+
   })
 );
 

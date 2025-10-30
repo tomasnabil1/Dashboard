@@ -37,16 +37,16 @@ app.use(/(.*)/, (req, res) => {
     message: `This ulr ${req.originalUrl} not found in this API`,
   });
 });
-
-mongoose
-  .connect(process.env.MONGOURI)
+mongoose.connect(process.env.MONGO_URL)
   .then(() => {
-    console.log("Database Connected");
+    console.log("✅ MongoDB Connected");
   })
   .catch((err) => {
-    console.log(err);
+    console.log("❌ MongoDB Error:", err);
   });
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server Started");
 });
+
+

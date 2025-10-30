@@ -86,7 +86,7 @@
       }
 
       // fetch
-      const res = await fetch("http://localhost:3000/auth/resetPassword", {
+      const res = await fetch("https://YOUR-RAILWAY-DOMAIN.up.railway.app/auth/resetPassword", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, newPassword }),

@@ -39,10 +39,10 @@ app.use(/(.*)/, (req, res) => {
 });
 mongoose.connect(process.env.MONGO_URL)
   .then(() => {
-    console.log("✅ MongoDB Connected");
+    console.log("MongoDB Connected");
   })
   .catch((err) => {
-    console.log("❌ MongoDB Error:", err);
+    console.log(" MongoDB Error:", err);
   });
 
 app.listen(process.env.PORT || 3000, () => {

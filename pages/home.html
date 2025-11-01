@@ -15,183 +15,142 @@
   <div class="" style="background-color: #F8F7FC;">
 
     <!-- Navbar -->
-    <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-y-3 items-center px-6 py-4 bg-gray-50">
+    <!-- Responsive Dashboard UI TailwindCSS -->
+<!-- ✅ تم ضبط الريسبونسيف بشكل كامل -->
 
-      <!-- Left -->
-      <div class="flex items-center gap-x-5">
-        <div>
-          <h2 class="text-sm text-gray-600">Total Revenue</h2>
-          <h1 class="text-black text-2xl font-bold">$45,365.00</h1>
-        </div>
+<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 items-center px-6 py-4 bg-gray-50">
 
-        <span class="flex items-center text-red-500 text-sm font-semibold gap-1 translate-y-1/2">
-          <i class="fa-solid fa-arrow-down"></i> $1,294
-        </span>
+  <!-- Left -->
+  <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+    <div>
+      <h2 class="text-sm text-gray-600">Total Revenue</h2>
+      <h1 class="text-black text-2xl font-bold">$45,365.00</h1>
+    </div>
 
-        <span class="flex items-center text-green-500 text-sm font-semibold gap-1 translate-y-1/2">
-          <i class="fa-solid fa-arrow-up"></i> $1,294
-        </span>
+    <div class="flex gap-3">
+      <span class="flex items-center text-red-500 text-sm font-semibold gap-1">
+        <i class="fa-solid fa-arrow-down"></i> $1,294
+      </span>
+
+      <span class="flex items-center text-green-500 text-sm font-semibold gap-1">
+        <i class="fa-solid fa-arrow-up"></i> $1,294
+      </span>
+    </div>
+  </div>
+
+  <!-- Center -->
+  <div class="relative w-full">
+    <input type="search" placeholder="Search" class="w-full bg-white border border-gray-200 rounded-xl py-2 pl-10 pr-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+  </div>
+
+  <!-- Right -->
+  <div class="flex justify-between md:justify-end items-center gap-6">
+    <i class="fa-solid fa-envelope text-xl text-blue-500"></i>
+    <i class="fa-solid fa-bell text-xl text-blue-500"></i>
+    <img src="../images/WhatsApp Image 2025-09-28 at 19.33.19_b79c967a.jpg" class="w-10 h-10 rounded-full object-cover">
+  </div>
+</div>
+
+<!-- Orders Cards -->
+<div class="w-full flex flex-col md:flex-row gap-4 justify-center pt-10 px-4">
+
+  <div class="w-full md:w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-blue-400 to-blue-700">
+    <h1 class="text-white pt-3 font-semibold text-lg">Shipped orders</h1>
+    <h1 class="text-end text-5xl text-white">67</h1>
+  </div>
+
+  <div class="w-full md:w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-red-400 to-red-500">
+    <h1 class="text-white pt-3 font-semibold text-lg">Pending orders</h1>
+    <h1 class="text-end text-5xl text-white">09</h1>
+  </div>
+
+  <div class="w-full md:w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-violet-400 to-violet-600">
+    <h1 class="text-white pt-3 font-semibold text-lg">New orders</h1>
+    <h1 class="text-end text-5xl text-white">35</h1>
+  </div>
+</div>
+
+<!-- Analytics Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 p-5 gap-4">
+
+  <!-- Trends -->
+  <div class="bg-white rounded-3xl p-4">
+    <h1 class="text-xl text-black font-semibold">Today’s trends</h1>
+    <span class="text-gray-400 text-xs">30 Sept 2021</span>
+    <img src="../images/graphic_main.png" alt="" class="w-full max-w-[350px] h-auto mx-auto mt-4">
+  </div>
+
+  <!-- Inbox + Activity -->
+  <div class="flex flex-col gap-6">
+
+    <!-- Inbox -->
+    <div class="bg-white rounded-xl p-3">
+      <h1 class="text-black font-bold flex justify-between text-sm">Inbox <span class="text-blue-600 font-medium">View details</span></h1>
+      <h2 class="text-gray-400 text-xs mt-1">Group:<span class="text-black font-thin"> Support</span></h2>
+
+      <div class="flex justify-between text-sm font-semibold mt-5">
+        <span>Waiting for order#12345</span>
+        <span class="text-gray-400">4:39</span>
       </div>
+      <div class="border-b border-gray-200 my-2"></div>
 
-      <!-- Center -->
-
-      <div class="relative w-2/1 ">
-        <input type="search" placeholder="Search"
-          class="w-full bg-white border border-gray-200 rounded-xl py-2 pl-10 pr-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-      </div>
-
-      <!-- Right -->
-      <div class="flex  justify-center md:justify-end items-center gap-x-8 -translate-x-4">
-        <i class="fa-solid fa-envelope text-xl text-blue-500"></i>
-        <i class="fa-solid fa-bell text-xl text-blue-500"></i>
-        <img src="../images/WhatsApp Image 2025-09-28 at 19.33.19_b79c967a.jpg"
-          class="w-10 h-10 rounded-full object-cover">
+      <div class="flex justify-between text-sm font-semibold mt-3">
+        <span>Customer support id#22234</span>
+        <span class="text-gray-400">11:07</span>
       </div>
     </div>
 
-    <!-- Orders  -->
-    <div class="items-center w-full flex flex-col gap-y-5 md:flex-row gap-x-16 justify-center pt-10">
+    <!-- Recent Activity -->
+    <div class="bg-white rounded-xl p-3 space-y-4">
+      <h1 class="text-black font-semibold flex justify-between text-sm">Recent Activity <span class="text-blue-600">View all</span></h1>
 
-      <div class="w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-blue-400 to-blue-700">
-        <h1 class="text-white pt-3 font-semibold" style="font-size: 18px;">Shipped orders</h1>
-        <h1 class="text-end text-5xl text-white">67</h1>
+      <!-- Item -->
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <span class="flex items-center justify-center w-4 h-4 rounded-full bg-blue-500">
+            <i class="fa-solid fa-check text-[9px] text-white"></i>
+          </span>
+          <span class="text-sm font-semibold">Confirm order update</span>
+        </div>
+        <span class="text-xs font-semibold px-2 py-1 text-white bg-yellow-400 rounded-lg">Urgent</span>
+      </div>
+      <div class="border-b border-gray-200"></div>
+
+      <!-- Item -->
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full bg-red-500 flex items-center justify-center"></span>
+          <span class="text-sm font-semibold">Finish shipping update</span>
+        </div>
+        <span class="text-xs font-semibold px-2 py-1 text-white bg-yellow-400 rounded-lg">Urgent</span>
+      </div>
+      <div class="border-b border-gray-200"></div>
+
+      <!-- Item -->
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full border border-gray-400 flex items-center justify-center"></span>
+          <span class="text-sm font-semibold">Create new order</span>
+        </div>
+        <span class="text-xs font-semibold px-2 py-1 text-white bg-green-500 rounded-lg">New</span>
+      </div>
+      <div class="border-b border-gray-200"></div>
+
+      <!-- Item -->
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <span class="flex items-center justify-center w-4 h-4 rounded-full bg-blue-500">
+            <i class="fa-solid fa-check text-[9px] text-white"></i>
+          </span>
+          <span class="text-sm font-semibold">Update payment report</span>
+        </div>
+        <span class="text-xs font-semibold px-2 py-1 text-gray-500 bg-gray-100 rounded-lg">Urgent</span>
       </div>
 
-      <div class="w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-red-400 to-red-500">
-        <h1 class="text-white pt-3 font-semibold " style="font-size: 18px;">Pending orders</h1>
-        <h1 class="text-end text-5xl text-white">09</h1>
-      </div>
-
-      <div class="w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-violet-400 to-violet-600">
-        <h1 class="text-white pt-3 font-semibold" style="font-size: 18px;">New orders</h1>
-        <h1 class="text-end text-5xl text-white">35</h1>
-      </div>
     </div>
-
-
-    <!-- Analysis -->
-    <div class="grid grid-cols-2 p-5 gap-x-8">
-
-      <!-- First div -->
-      <div class="bg-white rounded-3xl  ">
-        <h1 class="text-xl text-black font-semibold p-2">Today’s trends</h1>
-        <span class=" text-gray-400 font-normal p-2" style="font-size: 12px;">30 Sept 2021</span>
-        <img src="../images/graphic_main.png" alt="" class="w-[350px] h-[350px] bg-white ">
-      </div>
-
-      <!-- Second div -->
-      <div class="flex flex-col">
-        <!-- First col -->
-        
-        <div class="items-center bg-white rounded-xl ">
-          <div class="p-3">
-            <h1 class=" text-black font-bold pl-2 flex justify-between" style="font-size: 15px;">Inbox <span
-                class="text-sm font-semibold pr-2" style="color: #3751FF;">View details</span></h1>
-
-            <h2 class=" text-gray-400 pl-2" style="font-size: 13px;">Group:<span class=" text-black font-thin"
-                style="font-size: 13px;">Support</span></h2>
-
-
-            <h1 class="text-sm font-semibold pt-5 flex justify-between">Waiting for order#12345 <span
-                class="text-gray-400 text-end pr-2" style="font-size: 13px;">4:39</span></h1>
-
-            <pre class="text-sm text-gray-400">_____________________________________________________________</pre>
-
-            <h1 class="text-sm font-semibold pt-5 flex justify-between">Customer support id#22234<span
-                class="text-gray-400 pr-2 " style="font-size: 13px;">11:07</span></h1>
-
-          </div>
-        </div>
-
-        <!-- Second col -->
-        <div class="items-center bg-white rounded-xl mt-6">
-          <div class="p-3 ga-y-10">
-            <div>
-              <h1 class=" text-black font-semibold flex justify-between" style="font-size: 15px;">Recent Activity <span
-                  class="text-sm font-semibold pr-2" style="color: #3751FF;">View all</span></h1>
-            </div>
-            <div class="pt-10">
-              <div class="flex justify-between items-center pt-4">
-                <div class="flex items-center gap-2">
-
-                  <span class="flex items-center justify-center w-4 h-4 rounded-full bg-blue-500">
-                    <i class="fa-solid fa-check text-[9px] text-white"></i>
-                  </span>
-
-                  <h1 class="text-black font-semibold" style="font-size: 15px;">Confirm order update</h1>
-                </div>
-
-                <span
-                  class="text-sm font-semibold px-2 py-1 text-white rounded-xl inline-flex items-center justify-center"
-                  style="background-color: #FEC400;">
-                  Urgent
-                </span>
-
-              </div>
-
-
-              <pre class="text-sm text-gray-300">_____________________________________________________________</pre>
-
-              <div class="flex justify-between items-center pt-4">
-
-                <div class="flex items-center gap-2">
-                  <span class="w-4 h-4  flex items-center justify-center rounded-2xl" style="background-color: #FF0303;">
-                  </span>
-                  <h1 class="text-black font-semibold" style="font-size: 15px;">Finish shipping update</h1>
-                </div>
-
-                <span
-                  class="text-sm font-semibold px-2 py-1 text-white rounded-xl inline-flex items-center justify-center"
-                  style="background-color: #FEC400;">
-                  Urgent
-                </span>
-
-              </div>
-
-              <pre class="text-sm text-gray-300">_____________________________________________________________</pre>
-
-              <div class="flex justify-between items-center pt-4">
-
-                <div class="flex items-center gap-2">
-                  <span class="w-4 h-4 border border-gray-400 flex items-center justify-center rounded-2xl ">
-                  </span>
-                  <h1 class="text-black font-semibold" style="font-size: 15px;">Create new order</h1>
-                </div>
-
-                <span
-                  class="text-sm font-semibold px-2 py-1 text-white rounded-xl inline-flex items-center justify-center"
-                  style="background-color: #29CC97;">
-                  New
-                </span>
-
-              </div>
-              <pre class="text-sm text-gray-300">_____________________________________________________________</pre>
-
-              <div class="flex justify-between items-center pt-4">
-                <div class="flex items-center gap-2">
-
-                  <span class="flex items-center justify-center w-4 h-4 rounded-full bg-blue-500">
-                    <i class="fa-solid fa-check text-[9px] text-white"></i>
-                  </span>
-
-                  <h1 class="text-black font-semibold" style="font-size: 15px;">Update payment report</h1>
-                </div>
-
-                <span
-                  class="text-sm font-semibold px-2 py-1  rounded-xl inline-flex items-center justify-center"
-                  style="background-color: #F0F1F7; color: #9FA2B4;">
-                  Urgent
-                </span>
-
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
+  </div>
+</div>
 
     </div>
 

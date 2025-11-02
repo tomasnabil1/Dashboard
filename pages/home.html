@@ -8,164 +8,223 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <style>
+    :root {
+      --background-color: #F8F7FC;
+      --text-color: #000000;
+      --card-bg: #ffffff;
+    }
+
+    body.dark {
+      --background-color: #1E1E2E;
+      --text-color: #ffffff;
+      --card-bg: #2A2A3C;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      transition: background-color 0.4s ease;
+    }
+  </style>
 </head>
 
-<body>
+<body class="m-0 p-0 transition-colors duration-500">
+  <div class="grid grid-cols-1 min-h-screen md:grid-cols-6">
 
-  <div class="" style="background-color: #F8F7FC;">
-
-    <!-- Navbar -->
-    <!-- Responsive Dashboard UI TailwindCSS -->
-<!-- ✅ تم ضبط الريسبونسيف بشكل كامل -->
-
-<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 items-center px-6 py-4 bg-gray-50">
-
-  <!-- Left -->
-  <div class="flex flex-col sm:flex-row sm:items-center gap-5">
-    <div>
-      <h2 class="text-sm text-gray-600">Total Revenue</h2>
-      <h1 class="text-black text-2xl font-bold">$45,365.00</h1>
-    </div>
-
-    <div class="flex gap-3">
-      <span class="flex items-center text-red-500 text-sm font-semibold gap-1">
-        <i class="fa-solid fa-arrow-down"></i> $1,294
-      </span>
-
-      <span class="flex items-center text-green-500 text-sm font-semibold gap-1">
-        <i class="fa-solid fa-arrow-up"></i> $1,294
-      </span>
-    </div>
-  </div>
-
-  <!-- Center -->
-  <div class="relative w-full">
-    <input type="search" placeholder="Search" class="w-full bg-white border border-gray-200 rounded-xl py-2 pl-10 pr-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
-    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-  </div>
-
-  <!-- Right -->
-  <div class="flex justify-between md:justify-end items-center gap-6">
-    <i class="fa-solid fa-envelope text-xl text-blue-500"></i>
-    <i class="fa-solid fa-bell text-xl text-blue-500"></i>
-    <img src="../images/WhatsApp Image 2025-09-28 at 19.33.19_b79c967a.jpg" class="w-10 h-10 rounded-full object-cover">
-  </div>
-</div>
-
-<!-- Orders Cards -->
-<div class="w-full flex flex-col md:flex-row gap-4 justify-center pt-10 px-4">
-
-  <div class="w-full md:w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-blue-400 to-blue-700">
-    <h1 class="text-white pt-3 font-semibold text-lg">Shipped orders</h1>
-    <h1 class="text-end text-5xl text-white">67</h1>
-  </div>
-
-  <div class="w-full md:w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-red-400 to-red-500">
-    <h1 class="text-white pt-3 font-semibold text-lg">Pending orders</h1>
-    <h1 class="text-end text-5xl text-white">09</h1>
-  </div>
-
-  <div class="w-full md:w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-violet-400 to-violet-600">
-    <h1 class="text-white pt-3 font-semibold text-lg">New orders</h1>
-    <h1 class="text-end text-5xl text-white">35</h1>
-  </div>
-</div>
-
-<!-- Analytics Section -->
-<div class="grid grid-cols-1 md:grid-cols-2 p-5 gap-4">
-
-  <!-- Trends -->
-  <div class="bg-white rounded-3xl p-4">
-    <h1 class="text-xl text-black font-semibold">Today’s trends</h1>
-    <span class="text-gray-400 text-xs">30 Sept 2021</span>
-    <img src="../images/graphic_main.png" alt="" class="w-full max-w-[350px] h-auto mx-auto mt-4">
-  </div>
-
-  <!-- Inbox + Activity -->
-  <div class="flex flex-col gap-6">
-
-    <!-- Inbox -->
-    <div class="bg-white rounded-xl p-3">
-      <h1 class="text-black font-bold flex justify-between text-sm">Inbox <span class="text-blue-600 font-medium">View details</span></h1>
-      <h2 class="text-gray-400 text-xs mt-1">Group:<span class="text-black font-thin"> Support</span></h2>
-
-      <div class="flex justify-between text-sm font-semibold mt-5">
-        <span>Waiting for order#12345</span>
-        <span class="text-gray-400">4:39</span>
+    <!-- footer -->
+    <div class="footer col-span-1 pl-3 card">
+      <div class="p-2 flex items-center justify-center">
+        <img class="w-full max-w-[60px]" src="../images/3994393_off_on_power_shutdown_switch_icon.png" alt="">
       </div>
-      <div class="border-b border-gray-200 my-2"></div>
 
-      <div class="flex justify-between text-sm font-semibold mt-3">
-        <span>Customer support id#22234</span>
-        <span class="text-gray-400">11:07</span>
-      </div>
-    </div>
-
-    <!-- Recent Activity -->
-    <div class="bg-white rounded-xl p-3 space-y-4">
-      <h1 class="text-black font-semibold flex justify-between text-sm">Recent Activity <span class="text-blue-600">View all</span></h1>
-
-      <!-- Item -->
-      <div class="flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <span class="flex items-center justify-center w-4 h-4 rounded-full bg-blue-500">
-            <i class="fa-solid fa-check text-[9px] text-white"></i>
-          </span>
-          <span class="text-sm font-semibold">Confirm order update</span>
+      <div class="flex items-center justify-center md:items-start md:justify-start flex-col gap-y-3 pt-3 pl-3">
+        <div class="flex flex-col gap-3 gap-y-10">
+          <div class="flex flex-row items-center justify-center max-w-[150px] gap-x-1 border rounded-xl px-3 py-2"
+            style="background-color: #AF89FF26;">
+            <i class="fa-solid fa-grip" style="color: #2A4178;"></i>
+            <h1 class="text-xl font-bold" style="color: #2A4178;">Dashboard</h1>
+          </div>
+          <div class="flex flex-row items-center pl-3 gap-x-3">
+            <i class="fa-solid fa-cart-shopping" style="color: #A7B7DD;"></i>
+            <h1 class="text-[17px]" style="color: #A7B7DD;">Order</h1>
+          </div>
+          <div class="flex flex-row items-center pl-3 gap-x-3">
+            <i class="fa-solid fa-bag-shopping" style="color:#A7B7DD;"></i>
+            <h1 class="text-[17px]" style="color: #A7B7DD;">Products</h1>
+          </div>
+          <div class="flex flex-row items-center pl-3 gap-x-3">
+            <i class="fa-solid fa-truck-fast" style="color: #A7B7DD;"></i>
+            <h1 class="text-[17px]" style="color: #A7B7DD;">Shipping</h1>
+          </div>
+          <div class="flex flex-row items-center pl-3 gap-x-3">
+            <i class="fa-solid fa-credit-card" style="color: #A7B7DD;"></i>
+            <h1 class="text-[17px]" style="color: #A7B7DD;">Payments</h1>
+          </div>
+          <div class="flex flex-row items-center pl-3 gap-x-3">
+            <i class="fa-solid fa-gear" style="color: #A7B7DD;"></i>
+            <h1 class="text-[17px]" style="color: #A7B7DD;">Settings</h1>
+          </div>
         </div>
-        <span class="text-xs font-semibold px-2 py-1 text-white bg-yellow-400 rounded-lg">Urgent</span>
-      </div>
-      <div class="border-b border-gray-200"></div>
 
-      <!-- Item -->
-      <div class="flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <span class="w-4 h-4 rounded-full bg-red-500 flex items-center justify-center"></span>
-          <span class="text-sm font-semibold">Finish shipping update</span>
+        <h1 class="text-xl font-semibold">Customer Support :</h1>
+        <p class="text-sm text-gray-400 leading-relaxed max-w-[230px]">
+          Ask your query, place requests or report important issues.
+          Our support team will contact you 24/7.
+        </p>
+
+        <div class="flex flex-row items-center justify-center gap-x-1 border max-w-[150px] rounded-xl px-2 py-2"
+          style="background-color: #C3DFFA;">
+          <i class="fa-brands fa-nfc-symbol" style="color: #1A6BBA;"></i>
+          <h2 style="color: #1A6BBA;">Connect Now</h2>
         </div>
-        <span class="text-xs font-semibold px-2 py-1 text-white bg-yellow-400 rounded-lg">Urgent</span>
+
+        <p class="text-sm text-gray-400 leading-relaxed max-w-[230px]">
+          Terms & Services<br>Privacy Policy
+        </p>
       </div>
-      <div class="border-b border-gray-200"></div>
-
-      <!-- Item -->
-      <div class="flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <span class="w-4 h-4 rounded-full border border-gray-400 flex items-center justify-center"></span>
-          <span class="text-sm font-semibold">Create new order</span>
-        </div>
-        <span class="text-xs font-semibold px-2 py-1 text-white bg-green-500 rounded-lg">New</span>
-      </div>
-      <div class="border-b border-gray-200"></div>
-
-      <!-- Item -->
-      <div class="flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <span class="flex items-center justify-center w-4 h-4 rounded-full bg-blue-500">
-            <i class="fa-solid fa-check text-[9px] text-white"></i>
-          </span>
-          <span class="text-sm font-semibold">Update payment report</span>
-        </div>
-        <span class="text-xs font-semibold px-2 py-1 text-gray-500 bg-gray-100 rounded-lg">Urgent</span>
-      </div>
-
-    </div>
-  </div>
-</div>
-
     </div>
 
+    <!-- 2-Page -->
+    <div class="col-span-5 card">
+      <!-- Navbar -->
+      <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 items-center px-6 py-4 card">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+          <div>
+            <h2 class="text-sm text-gray-600">Total Revenue</h2>
+            <h1 class="text-2xl font-bold">$45,365.00</h1>
+          </div>
+          <div class="flex gap-3">
+            <span class="flex items-center text-red-500 text-sm font-semibold gap-1">
+              <i class="fa-solid fa-arrow-down"></i> $1,294
+            </span>
+            <span class="flex items-center text-green-500 text-sm font-semibold gap-1">
+              <i class="fa-solid fa-arrow-up"></i> $1,294
+            </span>
+          </div>
+        </div>
 
+        <div class="relative w-full">
+          <input type="search" placeholder="Search"
+            class="w-full bg-white border border-gray-200 rounded-xl py-2 pl-10 pr-3 placeholder-black focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        </div>
 
+        <div class="flex justify-center md:justify-end items-center gap-6">
+          <i class="fa-solid fa-envelope text-xl text-blue-500"></i>
+          <i class="fa-solid fa-bell text-xl text-blue-500"></i>
 
+          <a href="../index.html">
+          <img src="../images/WhatsApp Image 2025-09-28 at 19.33.19_b79c967a.jpg"
+            class="w-10 h-10 rounded-full object-cover">
+          </a>
 
+          
+          <button id="theme-switch"
+            class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 text-white cursor-pointer">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </div>
 
+      <!-- Orders Cards -->
+      <div class="w-full flex flex-col md:flex-row gap-4 justify-center pt-10 px-4">
+        <div class="w-full md:w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-blue-400 to-blue-700">
+          <h1 class="text-white pt-3 font-semibold text-lg">Shipped orders</h1>
+          <h1 class="text-end text-5xl text-white">67</h1>
+        </div>
+        <div class="w-full md:w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-red-400 to-red-500">
+          <h1 class="text-white pt-3 font-semibold text-lg">Pending orders</h1>
+          <h1 class="text-end text-5xl text-white">09</h1>
+        </div>
+        <div class="w-full md:w-[300px] h-[100px] rounded-2xl px-5 bg-gradient-to-br from-violet-400 to-violet-600">
+          <h1 class="text-white pt-3 font-semibold text-lg">New orders</h1>
+          <h1 class="text-end text-5xl text-white">35</h1>
+        </div>
+      </div>
 
+      <!-- Analytics Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 p-5 gap-4">
+        <div class="card rounded-3xl p-4">
+          <h1 class="text-xl font-semibold">Today’s trends</h1>
+          <span class="text-gray-400 text-xs">30 Sept 2021</span>
+          <img src="../images/graphic_main.png" alt="" class="w-full max-w-[350px] h-auto mx-auto mt-4">
+        </div>
 
+        <div class="flex flex-col gap-6">
+          <div class="card rounded-xl p-3">
+            <h1 class="font-bold flex justify-between text-sm">Inbox
+              <span class="text-blue-600 font-medium">View details</span>
+            </h1>
+            <h2 class="text-gray-400 text-xs mt-1">Group:<span class="text-black font-thin"> Support</span></h2>
+            <div class="flex justify-between text-sm font-semibold mt-5">
+              <span>Waiting for order#12345</span>
+              <span class="text-gray-400">4:39</span>
+            </div>
+            <div class="border-b border-gray-200 my-2"></div>
+            <div class="flex justify-between text-sm font-semibold mt-3">
+              <span>Customer support id#22234</span>
+              <span class="text-gray-400">11:07</span>
+            </div>
+          </div>
 
+          <div class="card rounded-xl p-3 space-y-4">
+            <h1 class="font-semibold flex justify-between text-sm">Recent Activity
+              <span class="text-blue-600">View all</span>
+            </h1>
 
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <span class="flex items-center justify-center w-4 h-4 rounded-full bg-blue-500">
+                  <i class="fa-solid fa-check text-[9px] text-white"></i>
+                </span>
+                <span class="text-sm font-semibold">Confirm order update</span>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 text-white bg-yellow-400 rounded-lg">Urgent</span>
+            </div>
 
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <span class="w-4 h-4 rounded-full bg-red-500 flex items-center justify-center"></span>
+                <span class="text-sm font-semibold">Finish shipping update</span>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 text-white bg-yellow-400 rounded-lg">Urgent</span>
+            </div>
+
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <span class="w-4 h-4 rounded-full border border-gray-400 flex items-center justify-center"></span>
+                <span class="text-sm font-semibold">Create new order</span>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 text-white bg-green-500 rounded-lg">New</span>
+            </div>
+
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <span class="flex items-center justify-center w-4 h-4 rounded-full bg-blue-500">
+                  <i class="fa-solid fa-check text-[9px] text-white"></i>
+                </span>
+                <span class="text-sm font-semibold">Update payment report</span>
+              </div>
+              <span class="text-xs font-semibold px-2 py-1 text-gray-500 bg-gray-100 rounded-lg">Urgent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <script>
+    const switchBtn = document.getElementById("theme-switch");
+    switchBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+  </script>
 </body>
 
 </html>
